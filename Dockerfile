@@ -1,8 +1,5 @@
 # syntax = docker/dockerfile:1.0-experimental
 
-ARG VAGRANT_VERSION=2.3.6
-ARG VAGRANT_VERSION_DEB=2.3.6-1
-
 FROM ubuntu:jammy as base
 
 RUN apt-get -q update \
@@ -28,8 +25,8 @@ RUN apt-get -q update \
 
 ENV VAGRANT_HOME /.vagrant.d
 
-ARG VAGRANT_VERSION
-ARG VAGRANT_VERSION_DEB
+ARG VAGRANT_VERSION=2.3.7
+ARG VAGRANT_VERSION_DEB=2.3.7-1
 ENV VAGRANT_VERSION ${VAGRANT_VERSION}
 ENV VAGRANT_VERSION_DEB ${VAGRANT_VERSION_DEB}
 ENV VAGRANT_DEB_URL "https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION_DEB}_amd64.deb"
